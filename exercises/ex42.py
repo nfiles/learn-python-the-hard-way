@@ -6,44 +6,51 @@ class Animal(object):
     def speak(self):
         pass
 
-## Dig is-an animal
+## Dog is-an animal
 class Dog(Animal):
     def __init__(self, name):
-        ## Dog has a name
+        ## Dog has-a name
         self.name = name
 
-## ??
+    def speak(self):
+        print "woof"
+
+## Cat is-an Animal
 class Cat(Animal):
     def __init__(self, name):
-        ## ??
+        ## Cat has-a name
         self.name = name
 
-## ??
+    def speak(self):
+        print "meow"
+
+## Person is-an object
 class Person(object):
     def __init__(self, name):
-        ## ??
+        ## Person has-a name
         self.name = name
 
         ## Person has-a pet of some kind
         self.pet = None
 
-## ??
+## Employee is-a Person
 class Employee(Person):
     def __init__(self, name, salary):
-        ## ?? hmm what is this strange magic?
+        ## initialize base class
         super(Employee, self).__init__(name)
-        ## ??
+        ## Employee has-a salary
         self.salary = salary
 
-## ??
+## Fish is-an object
 class Fish(object):
-    pass
+    def swim(self):
+        print "swimming"
 
-## ??
+## Salmon is-a Fish
 class Salmon(Fish):
     pass
 
-## ??
+## Halibut is-a Fish
 class Halibut(Fish):
     pass
 
@@ -51,22 +58,23 @@ class Halibut(Fish):
 ## rover is-a Dog
 rover = Dog("Rover")
 
-## ??
+## satan is-a Cat
 satan = Cat("Satan")
 
-## ??
+## mary is-a Person
 mary = Person("Mary")
 
+## mary's pet is satan (the Cat)
 mary.pet = satan
 
-## ??
+## frank is-an Employee who is named "Frank" and whose salary is 120000
 frank = Employee("Frank", 120000)
 
-## ??
+## flipper is-a Fish
 flipper = Fish()
 
-## ??
+## crouse is-a Salmon
 crouse = Salmon()
 
-## ??
+## harry is-a Halibut
 harry = Halibut()
