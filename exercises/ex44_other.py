@@ -1,0 +1,38 @@
+class Other(object):
+
+    def implicit(self):
+        print "OTHER implicit()"
+
+    def override(self):
+        print "OTHER override()"
+
+    def altered(self):
+        print "OTHER altered()"
+
+class Child(object):
+
+    def __init__(self):
+        self.other = Other()
+
+    def implicit(self):
+        self.other.implicit()
+
+    def override(self):
+        print "CHILD override()"
+
+    def altered(self):
+        print "CHILD, BEFORE PARENT altered()"
+        self.other.altered()
+        print "CHILD, AFTER PARENT altered()"
+
+son = Child()
+
+son.implicit()
+
+print "--------"
+
+son.override()
+
+print "--------"
+
+son.altered()
