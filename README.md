@@ -1,4 +1,4 @@
 learn-python-the-hard-way
 =========================
 
-Learn Python The Hard Wayhttp://learnpythonthehardway.org/book)
+Learn Python The Hard Way: http://learnpythonthehardway.org/book
